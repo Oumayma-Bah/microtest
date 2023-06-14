@@ -5,6 +5,8 @@ import com.microservice.task.entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TaskService implements ITaskService {
     @Autowired
@@ -16,7 +18,7 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public Iterable<Task> getTask(){
+    public List<Task> getTask(){
         return taskRepo.findAll();
     }
 

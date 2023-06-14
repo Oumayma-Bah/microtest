@@ -38,6 +38,11 @@ pipeline {
                 }
             }
         }
+        stage('Maven Test') {
+            steps {
+              sh "mvn test"
+            }
+        }
 
 
     }

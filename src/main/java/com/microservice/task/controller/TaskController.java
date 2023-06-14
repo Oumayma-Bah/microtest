@@ -5,13 +5,15 @@ import com.microservice.task.service.ITaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class TaskController {
     @Autowired
     ITaskService iTaskService;
 
     @GetMapping("/getTask")
-    public Iterable<Task> getTasks(){
+    public List<Task> getTasks(){
         return iTaskService.getTask();
     }
     @PostMapping("/AddTask")

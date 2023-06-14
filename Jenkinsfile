@@ -16,7 +16,7 @@ pipeline {
         }
         stage('MVN CLEAN') {
                     steps {
-                        sh 'mvn clean'
+                        sh 'mvn -e clean'
                     }
         }
         stage('MVN COMPILE') {

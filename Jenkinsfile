@@ -31,7 +31,7 @@ pipeline {
                       withSonarQubeEnv('SonarQube') {
                         //env.MAVEN_OPTS = "-Duser.home=${env.WORKSPACE}/.m2 -Dmaven.repo.local=${env.WORKSPACE}/.m2/repository"
                         //sh "cd avec-maven && mvn sonar:sonar -Dsonar.login=$USERNAME -Dsonar.password=$PASSWORD"
-                        mvn sonar:sonar -Dsonar.login=$USERNAME -Dsonar.password=$PASSWORD
+                        mvn sonar:sonar
 
                         }
 

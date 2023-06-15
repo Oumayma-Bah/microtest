@@ -38,10 +38,10 @@ pipeline {
                 }
             }
         }
-        stage('Maven Test') {
+        stage('JUnit / Mockito') {
             steps {
               sh 'mvn test'
-              //junit 'target/surefire-reports/*.xml'
+              junit 'target/surefire-reports/*.xml'
             }
         }
 

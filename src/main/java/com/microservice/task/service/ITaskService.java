@@ -7,9 +7,11 @@ import java.util.List;
 public interface ITaskService {
     Task addTask(Task task);
 
-    List<Task> getTask();
+    Task getTask(int id);
 
     Task editTask(Task task);
 
     void deleteTask(int id);
+
+    List<Task> getAllTasks();
 }

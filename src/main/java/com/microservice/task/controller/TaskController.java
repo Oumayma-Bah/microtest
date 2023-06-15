@@ -14,7 +14,7 @@ public class TaskController {
 
     @GetMapping("/getTask")
     public List<Task> getTasks(){
-        return iTaskService.getTask();
+        return iTaskService.getAllTasks();
     }
     @PostMapping("/AddTask")
     public Task addTask(@RequestBody Task task){

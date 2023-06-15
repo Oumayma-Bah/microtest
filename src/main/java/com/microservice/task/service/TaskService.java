@@ -18,9 +18,11 @@ public class TaskService implements ITaskService {
     }
 
     @Override
-    public List<Task> getTask(){
+    public List<Task> getAllTasks(){
         return taskRepo.findAll();
     }
+    @Override
+    public Task getTask(int id) { return taskRepo.findById(id).orElse(null); }
 
     @Override
     public Task editTask(Task task){

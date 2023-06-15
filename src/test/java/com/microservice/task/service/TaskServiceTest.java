@@ -21,7 +21,7 @@ import java.util.Optional;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TaskServiceTest {
+class TaskServiceTest {
     @Autowired
     ITaskService iTaskService;
     @Mock
@@ -40,13 +40,13 @@ public class TaskServiceTest {
 
     @Test
     @Order(1)
-    public void testGetAllTasks(){
+    void testGetAllTasks(){
         List<Task> taskList = iTaskService.getAllTasks();
         Assertions.assertEquals(0, taskList.size());
     }
 
     @Test
-    public void testGetUser(){
+    void testGetUser(){
            Mockito.when(taskRepo.findById(Mockito.anyInt())).thenReturn(Optional.of(task));
            Task task1= taskService.getTask(123);
            Assertions.assertNotNull(task1);

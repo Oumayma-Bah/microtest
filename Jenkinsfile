@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Testing Maven') {
-                    steps {
-                        sh """mvn -version"""
-                    }
-        }
         stage('GIT') {
                     steps {
                         echo "getting project from git"
@@ -44,6 +39,11 @@ pipeline {
               junit 'target/surefire-reports/*.xml'
             }
         }
+        stage('Nexus') {
+                            steps {
+                                sh "mvn deploy"
+                            }
+                }
 
 
     }

@@ -1,13 +1,11 @@
 package com.microservice.task.controller;
 
-import com.microservice.task.DTO.TaskDTO;
+import com.microservice.task.dto.TaskDTO;
 import com.microservice.task.entity.Task;
 import com.microservice.task.service.ITaskService;
-import org.apache.catalina.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 
 import java.util.List;
@@ -22,9 +20,9 @@ public class TaskController {
         return iTaskService.getAllTasks();
     }
     @PostMapping("/AddTask")
-    public Task addTask(@RequestBody Task task){
-
-        return iTaskService.addTask(task);
+    public Task addTask(@RequestBody TaskDTO task){
+        Task persistentTask = new Task();
+        return iTaskService.addTask(persistentTask);
     }
     @PutMapping("/updateTask")
     public Task updateTask(@RequestBody TaskDTO task){

@@ -1,4 +1,4 @@
-package com.microservice.task.DTO;
+package com.microservice.task.dto;
 
 import com.microservice.task.entity.EtatTask;
 import lombok.AllArgsConstructor;

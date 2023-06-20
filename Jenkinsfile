@@ -4,8 +4,8 @@ pipeline {
         stage('GIT') {
                     steps {
                         echo "getting project from git"
-                        withCredentials([usernamePassword(credentialsId: 'git-cred', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                            git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Oumayma-Bah/microtest.git'
+                        withCredentials([usernamePassword(credentialsId: 'b746e1b5-725b-4f40-8058-804123acf9aa', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+                            git branch: 'main', credentialsId: 'b746e1b5-725b-4f40-8058-804123acf9aa', url: 'https://github.com/Oumayma-Bah/microtest.git'
                         }
                     }
         }

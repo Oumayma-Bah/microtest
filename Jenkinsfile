@@ -41,7 +41,7 @@ pipeline {
         }*/
         stage('Nexus') {
                             steps {
-  sh 'mvn clean package deploy:deploy-file -DgroupId=com.microservice -DartifactId=task -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo  -Durl=http://172.10.0.140:8081/repository/maven-snapshots/ -Dfile=target/task-0.0.1-SNAPSHOT.jar'
+  sh 'mvn clean package deploy:deploy-file -DgroupId=com.microservice -DartifactId=task -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo  -Durl=http://172.10.0.200:8081/repository/maven-snapshots/ -Dfile=target/task-0.0.1-SNAPSHOT.jar'
                             }
                 }
 

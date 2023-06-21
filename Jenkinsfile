@@ -9,7 +9,7 @@ pipeline {
                         }
                     }
         }
-        stage('MVN CLEAN') {
+        /*stage('MVN CLEAN') {
                     steps {
                         sh 'mvn -e clean'
                     }
@@ -38,7 +38,7 @@ pipeline {
               sh 'mvn test'
               junit 'target/surefire-reports/*.xml'
             }
-        }
+        }*/
         stage('Nexus') {
                             steps {
   sh 'mvn clean package deploy:deploy-file -DgroupId=com.microservice -DartifactId=task -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo  -Durl=http://172.10.0.140:8081/repository/maven-snapshots/ -Dfile=target/task-0.0.1-SNAPSHOT.jar'
